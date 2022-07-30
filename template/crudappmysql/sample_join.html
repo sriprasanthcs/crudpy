@@ -1,0 +1,22 @@
+{% extends 'crudappmysql/base.html' %}
+{% block content %}
+<table style="width:100%">
+    <tr>
+      <th>Sno</th>
+      <th>Sname</th>
+      <th>SEmail</th>
+    </tr>
+    {% for crudjoindt in crudjoin %}
+    <tr>
+       
+      <td>{{crudjoindt.1}}</td>
+      <td>{{crudjoindt.2}}</td>
+      <td>{{crudjoindt.3}}</td>
+     
+   
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="/crudform"><button type="button">Add New Value</button></a>
+  {% endblock %}
+  

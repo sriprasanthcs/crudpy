@@ -1,0 +1,23 @@
+{% extends 'crudappmysql/base.html' %}
+{% block content %}
+<table style="width:100%">
+    <tr>
+      <th>Sno</th>
+      <th>Sname</th>
+      <th>SEmail</th>
+    </tr>
+    {% for cruddt in crudDetail %}
+    <tr>
+       
+      <td>{{cruddt.sno}}</td>
+      <td>{{cruddt.sname}}</td>
+      <td>{{cruddt.semail}}</td>
+      <td><a href="/cruddelete/{{cruddt.id}}"><button type="button">Delete</button></a></td>
+      <td><a href="/crudupdate/{{cruddt.id}}"><button type="button">Update</button></a></td>
+   
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="/crudform"><button type="button">Add New Value</button></a>
+  {% endblock %}
+  

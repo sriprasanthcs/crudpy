@@ -1,0 +1,11 @@
+{% extends 'crudappmysql/base.html' %}
+{% block content %}
+    <form method="post">
+        Sno : <input type="text" value="{{crudUpdate.sno}}" name="sno">
+        Sname: <input type="text" value="{{crudUpdate.sname}}" name="sname">
+        SEmail: <input type="text" value="{{crudUpdate.semail}}" name="semail">
+        {% csrf_token %}
+        <button type="submit">Update New Value</button>
+    </form>  
+
+  {% endblock %}
