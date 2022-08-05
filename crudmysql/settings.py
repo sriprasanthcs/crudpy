@@ -28,7 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9gx6r6%vx6nvma$(6vf7m-w-br0q4tt#5l9c_c+(wc5@%6r^j9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -54,6 +55,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+JENKINS_TASKS = (
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pyflakes',
+    'django_jenkins.tasks.run_jslint',
+    'django_jenkins.tasks.run_csslint',    
+    'django_jenkins.tasks.run_sloccount'
+)
 
 ROOT_URLCONF = 'crudmysql.urls'
 
@@ -82,7 +91,7 @@ WSGI_APPLICATION = 'crudmysql.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'crudmysqlpy',
+        'NAME': 'crudappmysql',
         'HOST': 'localhost',
         'USER': 'root',
         'PASSWORD': '',
